@@ -65,3 +65,11 @@ optional arguments:
 
 
 
+**Dependencies**
+
+1. The scripts in here are dependent on [KGTK](https://github.com/usc-isi-i2/kgtk). The present release of the package might break on some edge case tsv files. Hence to ensure, that it does not break on those edge cases, make sure to install KGTK from <em>dev</em> branch.
+
+2. It is also dependent on [rdflib](https://github.com/RDFLib/rdflib). Do not use the present release (5.0.0) of rdflib. Install it from the <em>master</em> branch.
+
+   
+
