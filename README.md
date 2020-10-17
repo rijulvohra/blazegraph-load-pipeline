@@ -71,5 +71,7 @@ optional arguments:
 
 2. It is also dependent on [rdflib](https://github.com/RDFLib/rdflib). Do not use the present release (5.0.0) of rdflib. Install it from the <em>master</em> branch.
 
+Note: I'll update the readme when the new versions of both the libraries are released.
+
    
 
