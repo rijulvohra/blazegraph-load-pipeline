@@ -76,7 +76,7 @@ services:
       - WIKIBASE_HOST=wikibase.svc
       - WDQS_HOST=wdqs-proxy.svc
   wdqs:
-    image: wikibase/wdqs:0.3.10
+    image: rijboy/blazegraph-load
     restart: unless-stopped
     volumes:
       - ${WIKIBASE_VOLUME}/dockerMountedData:/wdqs/data
