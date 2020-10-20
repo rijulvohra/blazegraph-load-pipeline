@@ -54,8 +54,15 @@ The notebook can be run in three modes:
 **Note:**
 
 * Before running the notebook make sure that your Docker Daemon is running.
-
 * If you are loading a small subgraph on your local laptop, then the default blazegraph image would work fine. But if you are loading a large subgraph on a server, set the **blazegraph_image** parameter in the papermill command to **rijboy/blazegraph-load**
 
-  
+
+
+**Stop a docker container**
+
+To stop the containers running using the default paramters, you could simply run:
+
+```bash
+python stop_docker.py
+```
 
