@@ -1,0 +1,3 @@
+git+https://github.com/RDFLib/rdflib.git@master
+git+https://github.com/usc-isi-i2/kgtk.git@dev
+papermill
