@@ -1,0 +1,10 @@
+prefix wikibase: <http://wikiba.se/ontology#>
+prefix wd: <http://www.wikidata.org/entity/>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+
+select ?item ?itemLabel ?pred ?predLabel ?obj ?objLabel
+where {
+  ?item ?pred ?obj .
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en" .}
+}
+limit 100

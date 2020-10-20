@@ -1,6 +1,26 @@
 # blazegraph-load-pipeline
 Pipeline to generate triples aligning to Wikidata Schema for any KGTK graph and loading the created triples to Blazegraph
 
+**Steps to run the pipeline**
+
+* Create a new conda environment
+
+  ```bash
+  conda create --name kgtk_env python=3.7
+  ```
+
+* Activate the newly created environment
+
+  ```bash
+  conda activate kgtk_env
+  ```
+
+* Install Dependencies
+
+  ```bash
+  pip install -r requirements.txt
+  ```
+
 **Pipeline 1**
 
 The first pipeline is to generate wikidata triples for any KGTK subgraph. The pipeline can be run as a jupyter notebook using <em>papermill</em>. The pipeline would take the following parameters from the user:
@@ -12,6 +32,10 @@ triple_filename: the name of the output triple file with .ttl extension
 triple_generation_log: the name of the file to which the logs should be written
 properties_file_path: the path for the properties file(In this repo the Wikidata properties file is present in the notebooks directory)
 ```
+
+**Default parameters that the notebook takes**
+
+![default parameters](./documentation_images/generate_triples_parameter.jpeg)
 
 **Example Command for running the notebook**
 
