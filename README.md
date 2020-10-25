@@ -28,27 +28,28 @@ Pipeline to generate triples aligning to Wikidata Schema for any KGTK graph and 
 
 #kgtk_path takes in the directory which contains the kgtk subgraph
 kgtk_path = '/Users/rijulvohra/Documents/work/Novartis-ISI/kgtk_development/data/Q28885102'
-output_filename = 'pharma_product_concat.tsv.gz'
-triple_filename = 'pharma_triple.ttl'
-triple_generation_log = 'pharma_log.txt'
-properties_file_path = './properties.tsv'
+output_filename = 'pharma_product_concat.tsv.gz' # Name of the file after concatenating the tsv files
+triple_filename = 'pharma_triple.ttl' # Name of the ttl file generated from generate_wikidata_triples command
+triple_generation_log = 'pharma_log.txt' # Name of the log file
+properties_file_path = './properties.tsv' # Name of the file which has the properties defined
 
 # Load triples to blazegraph
-wikibase_ui_port = '10001'
-wikibase_sparql_port = '10002'
-wikibase_proxy_port = '10003'
-wikibase_qs_port = '10005'
-wikibase_volume = '.'
-docker_name = 'blazegraphpipeline'
-create_new = False
-stop_docker = "No"
-blazegraph_image = 'wikibase/wdqs:0.3.10'
-ttl_path = ''
+wikibase_ui_port = '10001' # Wikibase UI port
+wikibase_sparql_port = '10002' # Wikibase SPARQL port
+wikibase_proxy_port = '10003' # Wikibase proxy port 
+wikibase_qs_port = '10005' # Wikibase Quick Statement port
+wikibase_volume = '.' # Directory path that needs to be mounted on the docker contaner
+docker_name = 'blazegraphpipeline' # Name of the docker container
+create_new = False # Whether a new docker container needs to be created. Set True if a new has to be created
+stop_docker = "No" 
+blazegraph_image = 'wikibase/wdqs:0.3.10' # Name of the blazegraph image to be used
+ttl_path = '' # Path of the ttl file that needs to be loaded
+query_service_name = 'Novartis-ISI Query Service' # Name of the query service that needs to be shown in SPARQL #frontend
 
 #Parameterize whether you want to run just the generate_wikidata_triples part or loading to blazegraph part
-only_gen_triples = False
-only_load_triples = False
-both_gen_and_load_triples = False
+only_gen_triples = False # If set to True, only generate the triples
+only_load_triples = False # If set to True, only load the triples
+both_gen_and_load_triples = False # If set to True, first generate triples and then load the triples to a blazegraph
 ```
 
 
