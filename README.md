@@ -28,6 +28,8 @@ Pipeline to generate triples aligning to Wikidata Schema for any KGTK graph and 
 
 #kgtk_path takes in the directory which contains the kgtk subgraph
 kgtk_path = '/Users/rijulvohra/Documents/work/Novartis-ISI/kgtk_development/data/Q28885102'
+
+# Name of the output file should be a .gz file
 output_filename = 'pharma_product_concat.tsv.gz' # Name of the file after concatenating the tsv files
 triple_filename = 'pharma_triple.ttl' # Name of the ttl file generated from generate_wikidata_triples command
 triple_generation_log = 'pharma_log.txt' # Name of the log file
