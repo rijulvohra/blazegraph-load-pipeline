@@ -95,3 +95,27 @@ To stop the containers running using the default paramters, you could simply run
 python stop_docker.py
 ```
 
+Another easy way to stop all docker containers, if you don't want to use the provided python script is to use the shell docker commands:
+
+* If you want to stop all the running docker containers at once
+
+```bash
+docker stop $(docker ps -aq)
+```
+
+* If you want to remove all stopped containers at once
+
+```bash
+docker container prune
+```
+
+* If you want to remove all the unused volumes
+
+```bash
+docker volume prune
+```
+
+
+
+
+
