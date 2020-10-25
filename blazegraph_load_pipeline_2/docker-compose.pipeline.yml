@@ -75,6 +75,7 @@ services:
     environment:
       - WIKIBASE_HOST=wikibase.svc
       - WDQS_HOST=wdqs-proxy.svc
+      - BRAND_TITLE=${QUERY_SERVICE_NAME}
   wdqs:
     image: ${BLAZEGRAPH_IMAGE}
     restart: unless-stopped

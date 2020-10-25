@@ -10,7 +10,7 @@ dirname = os.path.dirname(os.path.abspath(__file__))
 
 class BlazegraphLoad():
     def __init__(self,wikibase_ui_port,wikibase_sparql,wikibase_proxy,wikibase_qs,wikibase_volume,
-                 docker_name,blazegraph_image):
+                 docker_name,blazegraph_image,query_service_name):
         #self.ttl_path = os.path.join(dirname,ttl_path)
         self.wikibase_ui_port = wikibase_ui_port
         self.wikibase_sparql = wikibase_sparql
@@ -21,12 +21,14 @@ class BlazegraphLoad():
         self.docker_name = docker_name
         #self.stop_docker = stop_docker
         self.blazegraph_image = blazegraph_image
+        self.query_service_name = query_service_name
         os.environ['WIKIBASE_UI'] = self.wikibase_ui_port
         os.environ['WIKIBASE_SPARQL'] = self.wikibase_sparql
         os.environ['WIKIBASE_PROXY'] = self.wikibase_proxy
         os.environ['WIKIBASE_QS'] = self.wikibase_qs
         os.environ['WIKIBASE_VOLUME'] = self.wikibase_volume
         os.environ['BLAZEGRAPH_IMAGE'] = self.blazegraph_image
+        os.environ['QUERY_SERVCE_NAME'] = self.query_service_name
 
 
     def driver_fn(self):
@@ -50,6 +52,7 @@ def generate_arguments():
     '''parser.add_argument('--stop_docker_container',help = 'To stop custom docker, pass the port numbers as well. If used '
                                                          'standalone, it will stop the default running docker', default='yes')'''
     parser.add_argument('--blazegraph_image',help='Image Name of blazegraph to be used',default='wikibase/wdqs:0.3.10')
+    parser.add_argument('--query_service_name',help='Name of the Frontend query service',default='Novartis-ISI Query Service')
     return parser
 
 
@@ -63,6 +66,7 @@ if __name__ == '__main__':
     wikibase_volume = args.wikibase_volume
     docker_name = args.docker_name
     blazegraph_image = args.blazegraph_image
+    query_service_name = args.query_service_name
     loader_obj = BlazegraphLoad(wikibase_ui_port,wikibase_sparql_port,wikibase_proxy_port,wikibase_qs_port,
-                                wikibase_volume,docker_name,blazegraph_image)
+                                wikibase_volume,docker_name,blazegraph_image,query_service_name)
     loader_obj.driver_fn()
